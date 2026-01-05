@@ -302,6 +302,21 @@ section > h2.reveal {
   box-shadow: none;
 }
 
+.project-gh {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  font-size: 1.2rem;
+  color: var(--muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.project-gh:hover {
+  color: yellow;
+  transform: scale(1.1);
+}
+
 /* ====== SKILLS ====== */
 .skills-grid {
   display: grid;

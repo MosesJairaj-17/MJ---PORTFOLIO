@@ -1,6 +1,10 @@
-/* ======= Mobile hamburger toggle ======= */
+/* =========================================================
+   MOBILE HAMBURGER TOGGLE
+========================================================= */
+
 const hambBtn = document.getElementById("hambBtn");
 const mobileMenu = document.getElementById("mobileMenu");
+
 hambBtn &&
   hambBtn.addEventListener("click", () => {
     mobileMenu.style.display =
@@ -11,16 +15,21 @@ hambBtn.addEventListener("click", () => {
   hambBtn.classList.toggle("open");
 });
 
-/* ======= Project expand/collapse logic =======
-       - clicking a card toggles "expanded" class
-       - only one project expanded at a time (optional)
-       - accessible via keyboard (Enter/Space)
-    */
+
+/* =========================================================
+   PROJECT EXPAND / COLLAPSE LOGIC
+   - Click card to expand
+   - Only one expanded at a time
+   - Keyboard accessible (Enter / Space)
+========================================================= */
+
 const cards = document.querySelectorAll(".project-card");
+
 function collapseAll() {
   cards.forEach((c) => {
     c.classList.remove("expanded");
     c.setAttribute("aria-pressed", "false");
+
     const details = c.querySelector(".project-details");
     if (details) details.setAttribute("aria-hidden", "true");
   });
@@ -28,22 +37,31 @@ function collapseAll() {
 
 cards.forEach((card) => {
   card.addEventListener("click", (e) => {
-    // allow clicking the card or the GitHub link (gh is a link and should not toggle)
+    // Allow GitHub link clicks without toggling card
     if (e.target.closest(".project-gh")) return;
+
     const isExpanded = card.classList.contains("expanded");
-    // collapse others
+
+    // Collapse all cards first
     collapseAll();
+
+    // Expand clicked card if it was not already expanded
     if (!isExpanded) {
       card.classList.add("expanded");
       card.setAttribute("aria-pressed", "true");
+
       const details = card.querySelector(".project-details");
       if (details) details.setAttribute("aria-hidden", "false");
-      // scroll expanded card into view a bit
-      card.scrollIntoView({ behavior: "smooth", block: "center" });
+
+      // Scroll expanded card into view
+      card.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
     }
   });
 
-  // keyboard support
+  // Keyboard accessibility support
   card.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
@@ -52,39 +70,57 @@ cards.forEach((card) => {
   });
 });
 
-/* ======= Simple contact handler (client-side only) ======= */
+
+/* =========================================================
+   SIMPLE CONTACT HANDLER (CLIENT-SIDE ONLY)
+========================================================= */
+
 function handleContact(e) {
   e.preventDefault();
+
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
+
   if (!name || !email || !message) {
     alert("Please fill all fields.");
     return false;
   }
-  // For now we just show a friendly confirmation.
+
   alert(
     "Thanks, " +
       name +
       "! Your message has been noted (this demo does not send emails)."
   );
+
   e.target.reset();
   return false;
 }
 
-/* ======= Close expanded project if user clicks outside ======= */
+
+/* =========================================================
+   CLOSE EXPANDED PROJECT WHEN CLICKING OUTSIDE
+========================================================= */
+
 document.addEventListener("click", (e) => {
-  // if click is inside any card, do nothing
+  // Ignore clicks inside project cards
   if (e.target.closest(".project-card")) return;
-  // else collapse all
+
+  // Otherwise collapse all
   collapseAll();
 });
 
-/* ======= Optional: smooth scroll for anchor links in-page ======= */
+
+/* =========================================================
+   SMOOTH SCROLL FOR IN-PAGE ANCHOR LINKS
+========================================================= */
+
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
   a.addEventListener("click", function (e) {
     const id = this.getAttribute("href");
+
     if (id === "#" || id === "") return;
+
     const el = document.querySelector(id);
     if (el) {
       e.preventDefault();
@@ -93,7 +129,11 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
   });
 });
 
-/* ======= Mouse-follow glow for project cards ======= */
+
+/* =========================================================
+   MOUSE-FOLLOW GLOW EFFECT FOR PROJECT CARDS
+========================================================= */
+
 document.querySelectorAll(".project-card").forEach((card) => {
   card.addEventListener("mousemove", (e) => {
     const rect = card.getBoundingClientRect();
@@ -105,7 +145,11 @@ document.querySelectorAll(".project-card").forEach((card) => {
   });
 });
 
-/* ======= Section Heading Reveal Animation ======= */
+
+/* =========================================================
+   SECTION HEADING REVEAL ANIMATION
+========================================================= */
+
 const headings = document.querySelectorAll("section > h2");
 
 const headingObserver = new IntersectionObserver(
@@ -122,26 +166,32 @@ const headingObserver = new IntersectionObserver(
 
 headings.forEach((h) => headingObserver.observe(h));
 
-/* ======= Dark Mode Toggle (Desktop + Mobile) ======= */
+
+/* =========================================================
+   DARK MODE TOGGLE (DESKTOP + MOBILE)
+========================================================= */
+
 const desktopToggle = document.getElementById("darkToggle");
 const mobileToggle = document.getElementById("darkToggleMobile");
 
 function updateIcons(isDark) {
   [desktopToggle, mobileToggle].forEach((btn) => {
     if (!btn) return;
+
     const icon = btn.querySelector("i");
     icon.className = isDark ? "fas fa-sun" : "fas fa-moon";
   });
 }
 
-// Apply saved theme on load
+// Apply saved theme on page load
 const savedTheme = localStorage.getItem("theme");
+
 if (savedTheme === "dark") {
   document.body.classList.add("dark");
   updateIcons(true);
 }
 
-// Toggle handler
+// Toggle theme handler
 function toggleTheme() {
   const isDark = document.body.classList.toggle("dark");
   localStorage.setItem("theme", isDark ? "dark" : "light");
