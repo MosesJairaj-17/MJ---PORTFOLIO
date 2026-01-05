@@ -77,12 +77,12 @@ nav.desktop-nav a:hover {
 
 /* 🌞 Light mode (WHITE background) */
 body:not(.dark) .nav-brand {
-  color: #0b2b6d;        /* deep blue */
+  color: #0b2b6d; /* deep blue */
 }
 
 /* 🌙 Dark mode */
 body.dark .nav-brand {
-  color: #ffffff;       /* white */
+  color: #ffffff; /* white */
 }
 
 /* ====== Hamburger Button ====== */
@@ -98,10 +98,7 @@ body.dark .nav-brand {
   align-items: center;
   justify-content: center;
 
-  transition:
-    color 0.25s ease,
-    background 0.25s ease,
-    transform 0.2s ease;
+  transition: color 0.25s ease, background 0.25s ease, transform 0.2s ease;
 }
 
 /* 🌞 Light mode */
@@ -128,8 +125,6 @@ body.dark .hamburger {
   transform: rotate(90deg);
 }
 
-
-
 /* Mobile nav */
 .mobile-nav {
   display: flex;
@@ -143,7 +138,6 @@ body.dark .hamburger {
   align-self: flex-start;
   margin-bottom: 8px;
 }
-
 
 /* ====== HERO ====== */
 .hero {
@@ -223,16 +217,13 @@ section > h2 {
 section > h2 {
   opacity: 0;
   transform: translateY(20px);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 section > h2.reveal {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 /* ====== CARD ====== */
 .card {
@@ -261,19 +252,14 @@ section > h2.reveal {
   flex-direction: column;
   gap: 8px;
 
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 .project-card:hover {
   transform: translateY(-6px);
-  box-shadow:
-    0 0 0 1px rgba(15, 98, 254, 0.25),
+  box-shadow: 0 0 0 1px rgba(15, 98, 254, 0.25),
     0 14px 30px rgba(15, 98, 254, 0.22);
 }
-
 
 .project-title {
   font-weight: 800;
@@ -311,7 +297,6 @@ section > h2.reveal {
   opacity: 1;
 }
 
-
 .project-card.expanded:hover {
   transform: none;
   box-shadow: none;
@@ -333,15 +318,12 @@ section > h2.reveal {
   border-radius: var(--radius);
   cursor: default;
   position: relative;
-  transition: 
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-card:hover {
   transform: translateY(-6px);
-  box-shadow:
-    0 0 0 1px rgba(15, 98, 254, 0.25),
+  box-shadow: 0 0 0 1px rgba(15, 98, 254, 0.25),
     0 12px 28px rgba(15, 98, 254, 0.25);
 }
 
@@ -359,7 +341,6 @@ section > h2.reveal {
 .skill-card:hover::after {
   opacity: 1;
 }
-
 
 /* ====== CONTACT ====== */
 .form-group {
@@ -469,10 +450,7 @@ footer {
   color: #111;
   font-size: 18px;
 
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    color 0.3s ease,
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease,
     background 0.3s ease;
 }
 
@@ -480,8 +458,7 @@ footer {
   transform: translateY(-4px);
   color: var(--accent);
   background: rgba(15, 98, 254, 0.08);
-  box-shadow:
-    0 0 0 1px rgba(15, 98, 254, 0.25),
+  box-shadow: 0 0 0 1px rgba(15, 98, 254, 0.25),
     0 10px 22px rgba(15, 98, 254, 0.25);
 }
 
@@ -652,24 +629,23 @@ footer {
 
 /* ====== Hero Name Responsive Fix ====== */
 .hero-name {
-  white-space: nowrap;   /* always one line */
-  text-align: left;      /* desktop = left */
+  white-space: nowrap; /* always one line */
+  text-align: left; /* desktop = left */
 }
 
 /* ====== Mobile ====== */
 @media (max-width: 768px) {
   .hero-name {
-    text-align: center;  /* mobile = center */
+    text-align: center; /* mobile = center */
   }
 }
 
 @media (max-width: 480px) {
   .hero-name {
-    font-size: 26px;     /* prevent wrap on very small screens */
+    font-size: 26px; /* prevent wrap on very small screens */
     letter-spacing: 1px;
   }
 }
-
 
 /* ====== Mouse-follow Glow for Project Cards ====== */
 .project-card {
@@ -753,14 +729,12 @@ body.dark .skill-card {
 }
 
 body.dark .skill-card:hover {
-  box-shadow:
-    0 0 0 1px rgba(120, 140, 255, 0.45),
+  box-shadow: 0 0 0 1px rgba(120, 140, 255, 0.45),
     0 14px 34px rgba(120, 140, 255, 0.35);
 }
 
 body.dark .project-card:hover {
-  box-shadow:
-    0 0 0 1px rgba(120, 140, 255, 0.45),
+  box-shadow: 0 0 0 1px rgba(120, 140, 255, 0.45),
     0 16px 36px rgba(120, 140, 255, 0.35);
 }
 
@@ -771,8 +745,7 @@ body.dark .social-icons a {
 body.dark .social-icons a:hover {
   color: #ffffff;
   background: rgba(120, 140, 255, 0.12);
-  box-shadow:
-    0 0 0 1px rgba(120, 140, 255, 0.45),
+  box-shadow: 0 0 0 1px rgba(120, 140, 255, 0.45),
     0 12px 28px rgba(120, 140, 255, 0.35);
 }
 
@@ -790,10 +763,7 @@ body.dark .social-icons a:hover {
   align-items: center;
   justify-content: center;
 
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    transform 0.25s ease;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.25s ease;
 }
 
 .theme-toggle:hover {

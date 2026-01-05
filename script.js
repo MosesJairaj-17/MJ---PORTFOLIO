@@ -7,10 +7,9 @@ hambBtn &&
       mobileMenu.style.display === "none" ? "block" : "none";
   });
 
-  hambBtn.addEventListener("click", () => {
+hambBtn.addEventListener("click", () => {
   hambBtn.classList.toggle("open");
 });
-
 
 /* ======= Project expand/collapse logic =======
        - clicking a card toggles "expanded" class
@@ -95,8 +94,8 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
 });
 
 /* ======= Mouse-follow glow for project cards ======= */
-document.querySelectorAll(".project-card").forEach(card => {
-  card.addEventListener("mousemove", e => {
+document.querySelectorAll(".project-card").forEach((card) => {
+  card.addEventListener("mousemove", (e) => {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -110,8 +109,8 @@ document.querySelectorAll(".project-card").forEach(card => {
 const headings = document.querySelectorAll("section > h2");
 
 const headingObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
+  (entries) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("reveal");
         headingObserver.unobserve(entry.target);
@@ -121,15 +120,14 @@ const headingObserver = new IntersectionObserver(
   { threshold: 0.3 }
 );
 
-headings.forEach(h => headingObserver.observe(h));
-
+headings.forEach((h) => headingObserver.observe(h));
 
 /* ======= Dark Mode Toggle (Desktop + Mobile) ======= */
 const desktopToggle = document.getElementById("darkToggle");
 const mobileToggle = document.getElementById("darkToggleMobile");
 
 function updateIcons(isDark) {
-  [desktopToggle, mobileToggle].forEach(btn => {
+  [desktopToggle, mobileToggle].forEach((btn) => {
     if (!btn) return;
     const icon = btn.querySelector("i");
     icon.className = isDark ? "fas fa-sun" : "fas fa-moon";
@@ -152,6 +150,3 @@ function toggleTheme() {
 
 desktopToggle?.addEventListener("click", toggleTheme);
 mobileToggle?.addEventListener("click", toggleTheme);
-
-
-
