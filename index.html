@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Moses Jairaj - Portfolio</title>
+
+    <!-- Font Awesome (icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+ 
+    <div class="main">
+      <!-- TOPBAR: right-side nav + hamburger -->
+      <header>
+        <div class="topbar">
+<div class="nav-brand">Portfolio</div>
+          <!-- spacer so nav sits to right -->
+          <nav class="desktop-nav" aria-label="Primary">
+            <button id="darkToggle" class="theme-toggle" aria-label="Toggle dark mode">
+  <i class="fas fa-moon"></i>
+</button>
+
+
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="MOSES RESUME.pdf" target="_blank">Resume</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <!-- hamburger for mobile -->
+          <button class="hamburger" aria-label="Open menu" id="hambBtn">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <div id="mobileMenu" style="display: none; padding: 12px 0">
+  <nav class="mobile-nav">
+    
+    <!-- Dark mode toggle (mobile) -->
+    <button id="darkToggleMobile" class="theme-toggle mobile-toggle">
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="MOSES RESUME.pdf" target="_blank">Resume</a>
+    <a href="#contact">Contact</a>
+
+  </nav>
+</div>
+
+      </header>
+
+      <!-- HERO -->
+      <section id="home" class="hero" aria-label="Introduction">
+        <div class="hero-left">
+<h1 class="hero-name">MOSES JAIRAJ</h1>
+          <h2>Web Developer</h2>
+          <p style="color: var(--muted); margin-bottom: 16px">
+            I build responsive web apps and small desktop tools. I love
+            JavaScript, Flask, and clean UI.
+          </p>
+          <div class="buttons">
+            <button
+              class="btn"
+              onclick="document.querySelector('#projects').scrollIntoView({behavior:'smooth'})"
+            >
+              View Projects
+            </button>
+            <button
+              class="btn secondary"
+              onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})"
+            >
+              Contact Me
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-right" aria-hidden="true">
+          <!-- uses moses.jpg from same folder -->
+          <img src="moses.jpg" alt="Photo of Moses Jairaj" />
+        </div>
+      </section>
+
+<!-- ABOUT -->
+<section id="about" aria-label="About me">
+  <h2>About Me</h2>
+
+  <div class="card">
+    <p style="color: var(--muted)">
+      Hi! I’m Moses Jairaj, an IT student with a strong passion for
+      technology and innovation. I love exploring the world of
+      programming, web development, and databases. My goal is to create
+      efficient, user-friendly, and creative digital solutions that make a
+      real impact. I enjoy learning new technologies and applying them in
+      projects that challenge my problem-solving and logical thinking
+      skills. Currently, I’m enhancing my skills in Python, JavaScript,
+      HTML, CSS, and React, while also gaining a solid foundation in
+      software development and database management. I believe in
+      continuous learning and enjoy working on projects that combine
+      creativity with technology.
+    </p>
+  </div>
+</section>
+
+
+      <!-- PROJECTS -->
+      <section id="projects" aria-label="Projects" style="margin-top: 18px">
+        <h2>My Projects</h2>
+
+        <!-- PROJECTS GRID -->
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Card 1 (short summary visible) -->
+          <article
+            class="project-card"
+            data-project="1"
+            tabindex="0"
+            role="button"
+            aria-pressed="false"
+          >
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: start;
+              "
+            >
+              <div>
+                <div class="project-title">Recoworld</div>
+                <div class="project-summary">
+                  Discover & explore books and movies in one place.
+                </div>
+              </div>
+              <a
+                class="project-gh"
+                href="https://github.com/"
+                target="_blank"
+                title="Open GitHub (Recoworld)"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+
+            <!-- details hidden until expand -->
+            <div class="project-details" aria-hidden="true">
+              <h4>Description</h4>
+              <p>
+                RecoWorld is a centralized platform that allows users to
+                discover and explore books and movies. Search, genre filters,
+                favourites, and a Flask + MySQL backend power the platform.
+              </p>
+              <h4>Technologies</h4>
+              <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Flask (Python) backend</li>
+                <li>MySQL database</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article
+            class="project-card"
+            data-project="2"
+            tabindex="0"
+            role="button"
+            aria-pressed="false"
+          >
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: start;
+              "
+            >
+              <div>
+                <div class="project-title">Voice Weaver</div>
+                <div class="project-summary">
+                  Desktop Text-to-Speech app (Tkinter + pyttsx3).
+                </div>
+              </div>
+              <a
+                class="project-gh"
+                href="https://github.com/"
+                target="_blank"
+                title="Open GitHub (Voice Weaver)"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+
+            <div class="project-details" aria-hidden="true">
+              <h4>Description</h4>
+              <p>
+                Voice Weaver converts typed text into speech. It supports
+                multiple voices, adjustable rate/volume and saving output files
+                (MP3).
+              </p>
+              <h4>Technologies</h4>
+              <ul>
+                <li>Python, Tkinter</li>
+                <li>pyttsx3 text-to-speech engine</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article
+            class="project-card"
+            data-project="3"
+            tabindex="0"
+            role="button"
+            aria-pressed="false"
+          >
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: start;
+              "
+            >
+              <div>
+                <div class="project-title">Responsive Portfolio Website</div>
+                <div class="project-summary">
+                  This portfolio - responsive, clean, and easy to extend.
+                </div>
+              </div>
+              <a
+                class="project-gh"
+                href="https://github.com/MosesJairaj-17"
+                target="_blank"
+                title="Open GitHub (Portfolio)"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+
+            <div class="project-details" aria-hidden="true">
+              <h4>Description</h4>
+              <p>
+                A responsive website built with semantic HTML, CSS, and
+                JavaScript. Includes project showcase, contact form and a modern
+                responsive layout.
+              </p>
+              <h4>Technologies</h4>
+              <ul>
+                <li>HTML / CSS / JS</li>
+                <li>Font Awesome for icons</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+<article
+  class="project-card"
+  data-project="4"
+  tabindex="0"
+  role="button"
+  aria-pressed="false"
+>
+  <div
+    style="
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+    "
+  >
+    <div>
+      <div class="project-title">QuizPlay</div>
+      <div class="project-summary">
+        Interactive quiz app with scoring and categories.
+      </div>
+    </div>
+    <a
+      class="project-gh"
+      href="https://github.com/MosesJairaj-17"
+      target="_blank"
+      title="Open GitHub (QuizPlay)"
+    >
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+
+  <div class="project-details" aria-hidden="true">
+    <h4>Description</h4>
+    <p>
+      QuizPlay is a browser-based quiz application where users can choose
+      categories, answer questions, and get instant scores.
+    </p>
+    <h4>Technologies</h4>
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>DOM manipulation</li>
+    </ul>
+  </div>
+</article>
+
+        </div>
+        <!-- end grid -->
+      </section>
+
+     <!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+
+  <div class="skills-grid">
+    <div class="skill-card">HTML</div>
+    <div class="skill-card">CSS</div>
+    <div class="skill-card">JavaScript</div>
+    <div class="skill-card">NodeJs</div>
+    <div class="skill-card">MongoDb</div>
+    <div class="skill-card">Python</div>
+    <div class="skill-card">MySQL</div>
+    <div class="skill-card">Tkinter</div>
+  </div>
+</section>
+
+      <!-- CONTACT -->
+<section id="contact" style="margin-top: 22px">
+  <h2>Contact Me</h2>
+
+  <div class="card">
+    <form
+      action="https://formspree.io/f/xeeonzwy"
+      method="POST"
+    >
+      <div class="form-group">
+  <label for="name">Name</label>
+  <div class="input-icon">
+    <i class="fas fa-user"></i>
+    <input id="name" name="name" required />
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="email">Email</label>
+  <div class="input-icon">
+    <i class="fas fa-envelope"></i>
+    <input id="email" name="email" type="email" required />
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="message">Message</label>
+  <div class="input-icon textarea-icon">
+    <i class="fas fa-comment-dots"></i>
+    <textarea id="message" name="message" rows="5" required></textarea>
+  </div>
+</div>
+
+<div class="form-actions">
+  <button type="submit" class="submit-btn">
+    <i class="fas fa-paper-plane"></i>
+    Send Message
+  </button>
+</div>
+
+  </div>
+</section>
+
+
+      <!-- FOOTER -->
+      <footer>
+        <div>© 2026 Moses Jairaj</div>
+        <div class="social-icons">
+          <a
+            href="https://github.com/MosesJairaj-17"
+            target="_blank"
+            title="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/moses-jairaj-b6154a320"
+            target="_blank"
+            title="LinkedIn"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="mailto:mosesjairaj2005@gmail.com" title="Email"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+      </footer>
+    </div>
+    <!-- end main -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
